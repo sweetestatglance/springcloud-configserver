@@ -1,0 +1,28 @@
+server:
+  port: 8078
+
+spring:
+  application:
+      name: springcloud-configserver
+  #configserver 配置
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sweetestatglance/spcconfigdocuments.git
+          search-paths: providerdoc
+          #github 账号/密码配置 sweetestatglance
+          username: sweetestatglance
+          password: wang13540023664
+      label: master
+
+#eureka配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8076/eureka/
+
+
+
